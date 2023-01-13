@@ -2,6 +2,9 @@
 
 int main(){
 
+double mayor, menor;
+int indice1, indice2;
+
 double v1[]={
 0.3,
 725913,
@@ -202,6 +205,46 @@ double v1[]={
 
 int longitud=sizeof(v1)/sizeof(v1[0]);
 
-printf("el tamaño del vector es: %d",longitud);
+encontrar_mayor(v1,sizeof(v1)/sizeof(v1[0]),&mayor,&menor);
+encontrar_indice1(v1,sizeof(v1)/sizeof(v1[0]),&indice1);
+encontrar_menor(v1,sizeof(v1)/sizeof(v1[0]),&menor,&indice2);
 
+printf("el tamano del vector es: %d \n",longitud);
+
+printf("El numero menor es: %0.3f y su indice es: %d\n",menor,indice2);
+printf("El numero mayor es: %0.3f y su indice es: %d\n\n",mayor,indice1);
+
+}
+
+void encontrar_mayor(double v1[], int size, double *mayor, int *indice1) {
+    *mayor = v1[0];
+    *indice1 = 0;
+    for (int i = 1; i < size; i++) {
+        if (v1[i] > *mayor) {
+            *mayor = v1[i];
+            *indice1 = i;
+        }
+    }
+}
+
+void encontrar_indice1(double v1[], int size, int *indice1) {
+    double mayor = v1[0];
+    *indice1 = 0;
+    for (int i = 1; i < size; i++) {
+        if (v1[i] > mayor) {
+           mayor = v1[i];
+            *indice1 = i;
+        }
+    }
+}
+
+void encontrar_menor(double v1[], int size, double *menor, int *indice2) {
+    *menor = v1[0];
+    *indice2 = 0;
+    for (int i = 1; i < size; i++) {
+        if (v1[i] < *menor) {
+            *menor = v1[i];
+            *indice2 = i;
+        }
+    }
 }
