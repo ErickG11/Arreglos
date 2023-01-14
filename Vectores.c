@@ -212,7 +212,7 @@ printf("%f",suma);
 }
 
 void mayores(double v1[], int size, float *suma) {
-    printf("Los numeros mayores a 1 son: %d\n");
+    printf("Los numeros mayores a 1 son: \n");
     for (int i = 0; i < size; i++) {
         if (v1[i] > 1) {
             printf("%lf\n",v1[i]);
